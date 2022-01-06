@@ -1,3 +1,4 @@
+// array of questions to use for the quiz
 var quizQuestions = [
     {
         questionTitle: 'Which HTML tag creates an unordered list?',
@@ -20,3 +21,12 @@ var quizQuestions = [
         amswer: '--var'
     }
 ]
+
+//create a var that will link to html button
+var timer = document.querySelector('#startBtn')
+
+//create a timer that will start on the button click
+//create a button linking to the start button
+timer.addEventListener('click', function() {
+    console.log('works')
+})
