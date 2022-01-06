@@ -31,6 +31,9 @@ var quizDiv = document.querySelector('#quizDiv');
 //variable to access ul in html
 var quizUl = document.createElement('ul');
 var divRW = document.querySelector('#rightWrongDiv');
+var hsList = document.querySelector("#scoreList");
+var clear = document.querySelector("#clear");
+var goBack = document.querySelector("#back");
 
 //create a variable for the countdown timer (in seconds)
 var timeLeft = 90;
@@ -84,7 +87,7 @@ function compareClick(event) {
     mkDiv.setAttribute('id', 'mkDiv');
     if (element.textContent === quizQuestions[qIndex].questionAnswer) {
         mkDiv.textContent = "That is the correct answer!";
-        
+
         console.log(qIndex);
     }
     else {
@@ -95,7 +98,7 @@ function compareClick(event) {
     //move up the question index when the above function finishes
     qIndex++;
 
-    if(qIndex >= quizQuestions.length) {
+    if (qIndex >= quizQuestions.length) {
         finishedQuiz();
         mkDiv.innerHTML = '';
     }
@@ -135,10 +138,10 @@ function finishedQuiz() {
     mkSubmitBtn.textContent = 'Submit';
     quizDiv.appendChild(mkSubmitBtn);
 
-    mkSubmitBtn.addEventListener('click', function() {
+    mkSubmitBtn.addEventListener('click', function () {
         var initials = mkFormInput.value;
 
-        if(initials === null) {
+        if (initials === null) {
             var mkPNull = document.createElement('p');
             mkPNull.textContent = 'Please enter your initials.'
             quizDiv.appendChild(mkPNull);
@@ -159,6 +162,21 @@ function finishedQuiz() {
             scores.push(savedScore);
             var newScore = JSON.stringify(scores);
             localStorage.setItem('scores', newScore)
+            window.location.replace('highscores.html')
         }
     })
+}
+
+
+clear.addEventListener("click", function () {
+    localStorage.clear();
+});
+
+scores = JSON.parse(scores);
+if (scores !== null) {
+    for (var i = 0; i < scores.length; i++) {
+        var mkEl = document.createElement('li');
+        mkEl.textContent = scores[i].initials + '' + scores[i].score;
+        hsList.appendChild(mkEl);
+    }
 }
