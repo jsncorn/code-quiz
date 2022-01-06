@@ -28,6 +28,8 @@ var timer = document.querySelector('#startBtn');
 var currentTime = document.querySelector('#currentTime');
 //variable to access the quizdiv in html
 var quizDiv = document.querySelector('#quizDiv');
+//variable to access ul in html
+var quizUl = document.querySelector('#multipleChoice')
 
 //create a variable for the countdown timer (in seconds)
 var timeLeft = 90;
@@ -55,9 +57,17 @@ function renderQuestions(qIndex) {
     for(i = 0; i < quizQuestions.length; i++) {
         var quizQuestionTitle = quizQuestions[qIndex].questionTitle;
         var quizMultipleChoice = quizQuestions[qIndex].questionChoices;
+            //apend the title from questionTitle
         quizDiv.textContent = quizQuestionTitle;
     }
-    //apend the title from questionTitle
     //make a loop to create and append a new li item
-    //  using questionchoices
+    //  using questionchoices; using for loop instead
+    quizMultipleChoice.forEach(function (listItem) {
+        //create an li element to append to ul later
+        var listChoice = document.createElement('li');
+        //set the new element text to the array's input
+        listChoice.textContent = listItem;
+        quizDiv.appendChild()
+    })
+
 }
