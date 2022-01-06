@@ -24,6 +24,8 @@ var quizQuestions = [
 
 //create a var that will link to html button
 var timer = document.querySelector('#startBtn')
+//create a var that will link and change the timer
+var currentTime = document.querySelector('#currentTime')
 
 //create a variable for the countdown timer (in seconds)
 var timeLeft = 90;
@@ -35,6 +37,7 @@ timer.addEventListener('click', function() {
     if(stopInterval === 0) {
         stopInterval = setInterval(function () {
             timeLeft--;
+            currentTime.textContent = 'Time left: ' + timeLeft;
         }, 1000)
     }
 })
