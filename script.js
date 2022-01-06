@@ -67,7 +67,8 @@ function renderQuestions(qIndex) {
         var listChoice = document.createElement('li');
         //set the new element text to the array's input
         listChoice.textContent = listItem;
-        quizDiv.appendChild()
+        quizDiv.appendChild(quizUl);
+        quizUl.appendChild(listChoice);
     })
 
 }
