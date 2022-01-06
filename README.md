@@ -2,7 +2,7 @@
 
 This is a miniature code quiz that will dynamically create a multiple choice question on a button click using Javascript. After taking the quiz, it will allow the user to save their score and keep it in local storage. 
 
-![Demo GIF](#)
+![Demo GIF](https://github.com/jsncorn/code-quiz/blob/main/assets/demo.gif)
 
 ## Built With
 
