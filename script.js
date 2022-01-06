@@ -2,23 +2,23 @@
 var quizQuestions = [
     {
         questionTitle: 'Which HTML tag creates an unordered list?',
-        choices: ['<ul>', '<li>', '<ol>', '<s>'],
-        amswer: 'ul'
+        questionChoices: ['<ul>', '<li>', '<ol>', '<s>'],
+        questionAnswer: 'ul'
     },
     {
         questionTitle: 'jQuery is an API extension of what?',
-        choices: ['HTML', 'Bootstrap', 'Javascript', 'CSS'],
-        amswer: 'Javascript'
+        questionChoices: ['HTML', 'Bootstrap', 'Javascript', 'CSS'],
+        questionAnswer: 'Javascript'
     },
     {
         questionTitle: 'In Javascript, what is used to store data values?',
-        choices: ['array', 'string', 'function', 'variables'],
-        amswer: 'variables'
+        questionChoices: ['array', 'string', 'function', 'variables'],
+        questionAnswer: 'variables'
     },
     {
         questionTitle: 'How do you NOT declare a variable in Javascript?',
-        choices: ['let', 'var', 'const', '--var'],
-        amswer: '--var'
+        questionChoices: ['let', 'var', 'const', '--var'],
+        questionAnswer: '--var'
     }
 ]
 
@@ -43,6 +43,14 @@ timer.addEventListener('click', function() {
                 clearInterval(stopInterval);
                 currentTime.textContent = 'There is no more time left';
             }
-        }, 1000)
+        }, 1000);
     }
+    renderQuestions();
 })
+
+function renderQuestions() {
+    //get all data from the array
+    //apend the title from questionTitle
+    //make a loop to create and append a new li item
+    //  using questionchoices
+}
