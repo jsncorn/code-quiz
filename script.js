@@ -103,3 +103,10 @@ function compareClick(event) {
     }
     quizDiv.appendChild(mkDiv);
 }
+
+function finishedQuiz() {
+    quizDiv.innerHTML = '';
+    currentTime.innerHTML = '';
+
+    //make a heading, ask for initials, save to local storage
+}
