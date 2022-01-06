@@ -45,13 +45,13 @@ timer.addEventListener('click', function() {
             }
         }, 1000);
     }
-    renderQuestions();
+    renderQuestions(qIndex);
 })
 
-function renderQuestions() {
+function renderQuestions(qIndex) {
     //get all data from the array
     for(i = 0; i < quizQuestions.length; i++) {
-        console.log(quizQuestions.length)
+        var quizQuestionTitle = quizQuestions[qIndex].questionTitle;
     }
     //apend the title from questionTitle
     //make a loop to create and append a new li item
