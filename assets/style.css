@@ -1,0 +1,16 @@
+:root {
+--bg-green: rgb(0, 211, 0);
+--text-white: white;
+}
+
+body {
+    background-color: black;
+}
+
+.white {
+    color: var(--text-white);
+}
+
+#startBtn:hover {
+    background-color: var(--bg-green);
+}

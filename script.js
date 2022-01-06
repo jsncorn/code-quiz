@@ -117,21 +117,28 @@ function finishedQuiz() {
     var mkHeading = document.createElement('h1');
     mkHeading.setAttribute('id', 'mkHeading');
     mkHeading.textContent = 'Finished the Quiz';
+    mkHeading.setAttribute('class', 'white');
     quizDiv.appendChild(mkHeading);
 
     var mkP = document.createElement('p');
     clearInterval(stopInterval);
     mkP.textContent = "Your final score is: " + timeLeft;
+    mkP.setAttribute('class', 'white');    
     quizDiv.appendChild(mkP);
+
 
     var mkFormLabel = document.createElement('label');
     mkFormLabel.textContent = "Enter your initials here: "
+    mkFormInput.setAttribute('class', 'white');    
     quizDiv.appendChild(mkFormLabel);
+
 
     var mkFormInput = document.createElement('input');
     mkFormInput.setAttribute('type', 'text');
     mkFormInput.textContent = '';
+     mkFormInput.setAttribute('class', 'white');   
     quizDiv.appendChild(mkFormInput);
+
 
     var mkSubmitBtn = document.createElement('button');
     mkSubmitBtn.setAttribute('type', 'submit');
