@@ -84,7 +84,7 @@ function compareClick(event) {
     mkDiv.setAttribute('id', 'mkDiv');
     if (target.textContent == quizQuestions[qIndex].questionAnswer) {
         mkDiv.textContent = "That is the correct answer!";
-
+        
         console.log(qIndex);
     }
     else {
@@ -95,4 +95,11 @@ function compareClick(event) {
     //move up the question index when the above function finishes
     qIndex++;
 
+    if(qIndex >= quizQuestions.length) {
+        createDiv.textContent = "End of the quiz. Your final score is " + timeLeft + '.'
+    }
+    else {
+        renderQuestions(qIndex);
+    }
+    questionAnswer.appendChild(createDiv);
 }
