@@ -50,6 +50,9 @@ timer.addEventListener('click', function() {
 
 function renderQuestions() {
     //get all data from the array
+    for(i = 0; i < quizQuestions.length; i++) {
+        console.log(quizQuestions.length)
+    }
     //apend the title from questionTitle
     //make a loop to create and append a new li item
     //  using questionchoices
