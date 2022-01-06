@@ -29,7 +29,7 @@ var currentTime = document.querySelector('#currentTime');
 //variable to access the quizdiv in html
 var quizDiv = document.querySelector('#quizDiv');
 //variable to access ul in html
-var quizUl = document.querySelector('#multipleChoice');
+var quizUl = document.createElement('ul');
 var divRW = document.querySelector('#rightWrongDiv');
 
 //create a variable for the countdown timer (in seconds)
@@ -39,13 +39,13 @@ var qIndex = 0;
 
 //create a timer that will start on the button click
 //create a button linking to the start button
-timer.addEventListener('click', function() {
-    if(stopInterval === 0) {
+timer.addEventListener('click', function () {
+    if (stopInterval === 0) {
         stopInterval = setInterval(function () {
             timeLeft--;
             currentTime.textContent = 'Time left: ' + timeLeft;
 
-            if(timeLeft <= 0) {
+            if (timeLeft <= 0) {
                 clearInterval(stopInterval);
                 currentTime.textContent = 'There is no more time left';
             }
@@ -55,11 +55,13 @@ timer.addEventListener('click', function() {
 })
 
 function renderQuestions(qIndex) {
+    quizDiv.innerHTML = '';
+    quizUl.innerHTML = '';
     //get all data from the array
-    for(i = 0; i < quizQuestions.length; i++) {
+    for (i = 0; i < quizQuestions.length; i++) {
         var quizQuestionTitle = quizQuestions[qIndex].questionTitle;
         var quizMultipleChoice = quizQuestions[qIndex].questionChoices;
-            //apend the title from questionTitle
+        //apend the title from questionTitle
         quizDiv.textContent = quizQuestionTitle;
     }
     //make a loop to create and append a new li item
@@ -79,16 +81,18 @@ function compareClick(event) {
     var target = event.target;
 
     var mkDiv = document.createElement('div');
-    mkDiv.setAttribute('id','mkDiv');
-    if(target.textContent == quizQuestions[qIndex].questionAnswer) {
-        mkDiv.textContent = "That is the correct answer!"
+    mkDiv.setAttribute('id', 'mkDiv');
+    if (target.textContent == quizQuestions[qIndex].questionAnswer) {
+        mkDiv.textContent = "That is the correct answer!";
+
+        console.log(qIndex);
     }
     else {
         timeLeft = timeLeft - 10;
         mkDiv.textContent = "That is the wrong answer :(";
     }
 
-    //move up the question index when the above functino finishes
+    //move up the question index when the above function finishes
     qIndex++;
 
 }
