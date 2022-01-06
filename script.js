@@ -96,6 +96,7 @@ function compareClick(event) {
     qIndex++;
 
     if(qIndex >= quizQuestions.length) {
+        finishedQuiz();
         mkDiv.textContent = "End of the quiz. Your final score is " + timeLeft + '.'
     }
     else {
@@ -109,4 +110,27 @@ function finishedQuiz() {
     currentTime.innerHTML = '';
 
     //make a heading, ask for initials, save to local storage
+    var mkHeading = document.createElement('h1');
+    mkHeading.setAttribute('id', 'mkHeading');
+    mkHeading.textContent = 'Finished the Quiz';
+    quizDiv.appendChild(mkHeading);
+
+    var mkP = document.createElement('p');
+    clearInterval(stopInterval);
+    mkP.textContent = "Your final score is: " + timeLeft;
+    quizDiv.appendChild(mkP);
+
+    var mkFormLabel = document.createElement('label');
+    mkFormLabel.textContent = "Enter your initials here: "
+    quizDiv.appendChild(mkFormLabel);
+
+    var mkFormInput = document.createElement('input');
+    mkFormInput.setAttribute('type', 'text');
+    mkFormInput.textContent = '';
+    quizDiv.appendChild(mkFormInput);
+
+    var mkSubmitBtn = document.createElement('button');
+    mkSubmitBtn.setAttribute('type', 'submit');
+    mkSubmitBtn.textContent = 'Submit';
+    quizDiv.appendChild(mkSubmitBtn);
 }
