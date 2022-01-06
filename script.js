@@ -145,7 +145,20 @@ function finishedQuiz() {
             console.log("bad")
         }
         else {
-            
+            var savedScore = {
+                initials: initials,
+                score: timeLeft
+            }
+            var scores = localStorage.getItem('scores');
+            if (scores === null) {
+                scores = [];
+            }
+            else {
+                scores = JSON.parse(scores);
+            }
+            scores.push(savedScore);
+            var newScore = JSON.stringify(scores);
+            localStorage.setItem('scores', newScore)
         }
     })
 }
