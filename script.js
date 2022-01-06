@@ -29,7 +29,8 @@ var currentTime = document.querySelector('#currentTime');
 //variable to access the quizdiv in html
 var quizDiv = document.querySelector('#quizDiv');
 //variable to access ul in html
-var quizUl = document.querySelector('#multipleChoice')
+var quizUl = document.querySelector('#multipleChoice');
+var divRW = document.querySelector('#rightWrongDiv');
 
 //create a variable for the countdown timer (in seconds)
 var timeLeft = 90;
@@ -75,5 +76,12 @@ function renderQuestions(qIndex) {
 }
 
 function compareClick(event) {
-
+    var target = event.target;
+    if(target.textContent == quizQuestions[qIndex].questionAnswer) {
+        divRW.textContent = "Correct";
+    }
+    else {
+        timeLeft = timeLeft - 10;
+        divRW.textContent = "Wrong";
+    }
 }
