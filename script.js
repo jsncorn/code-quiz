@@ -34,6 +34,7 @@ var quizUl = document.querySelector('#multipleChoice')
 //create a variable for the countdown timer (in seconds)
 var timeLeft = 90;
 var stopInterval = 0;
+var qIndex = 0;
 
 //create a timer that will start on the button click
 //create a button linking to the start button
