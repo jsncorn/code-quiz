@@ -33,7 +33,7 @@ var quizUl = document.createElement('ul');
 var divRW = document.querySelector('#rightWrongDiv');
 var hsList = document.querySelector("#scoreList");
 var clear = document.querySelector("#clear");
-var goBack = document.querySelector("#back");
+var back = document.querySelector("#back");
 
 //create a variable for the countdown timer (in seconds)
 var timeLeft = 90;
@@ -114,34 +114,30 @@ function finishedQuiz() {
 
 
     //make a heading, ask for initials, save to local storage
-    var mkHeading = document.createElement('h1');
+    var mkHeading = document.createElement('h2');
     mkHeading.setAttribute('id', 'mkHeading');
+    mkHeading.setAttribute('class', 'center')
     mkHeading.textContent = 'Finished the Quiz';
-    mkHeading.setAttribute('class', 'white');
     quizDiv.appendChild(mkHeading);
 
     var mkP = document.createElement('p');
     clearInterval(stopInterval);
+    mkP.setAttribute('class','center')
     mkP.textContent = "Your final score is: " + timeLeft;
-    mkP.setAttribute('class', 'white');    
     quizDiv.appendChild(mkP);
-
 
     var mkFormLabel = document.createElement('label');
     mkFormLabel.textContent = "Enter your initials here: "
-    mkFormInput.setAttribute('class', 'white');    
     quizDiv.appendChild(mkFormLabel);
-
 
     var mkFormInput = document.createElement('input');
     mkFormInput.setAttribute('type', 'text');
     mkFormInput.textContent = '';
-     mkFormInput.setAttribute('class', 'white');   
     quizDiv.appendChild(mkFormInput);
-
 
     var mkSubmitBtn = document.createElement('button');
     mkSubmitBtn.setAttribute('type', 'submit');
+    mkSubmitBtn.setAttribute('id', 'submit')
     mkSubmitBtn.textContent = 'Submit';
     quizDiv.appendChild(mkSubmitBtn);
 
