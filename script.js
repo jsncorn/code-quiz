@@ -38,6 +38,11 @@ timer.addEventListener('click', function() {
         stopInterval = setInterval(function () {
             timeLeft--;
             currentTime.textContent = 'Time left: ' + timeLeft;
+
+            if(timeLeft <= 0) {
+                clearInterval(stopInterval);
+                currentTime.textContent = 'There is no more time left';
+            }
         }, 1000)
     }
 })
