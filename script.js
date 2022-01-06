@@ -81,10 +81,14 @@ function compareClick(event) {
     var mkDiv = document.createElement('div');
     mkDiv.setAttribute('id','mkDiv');
     if(target.textContent == quizQuestions[qIndex].questionAnswer) {
-        mkDiv.textContent = "Correct"
+        mkDiv.textContent = "That is the correct answer!"
     }
     else {
         timeLeft = timeLeft - 10;
-        mkDiv.textContent = "Wrong";
+        mkDiv.textContent = "That is the wrong answer :(";
     }
+
+    //move up the question index when the above functino finishes
+    qIndex++;
+
 }
