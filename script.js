@@ -55,7 +55,7 @@ function renderQuestions(qIndex) {
     for(i = 0; i < quizQuestions.length; i++) {
         var quizQuestionTitle = quizQuestions[qIndex].questionTitle;
         var quizMultipleChoice = quizQuestions[qIndex].questionChoices;
-        
+        quizDiv.textContent = quizQuestionTitle;
     }
     //apend the title from questionTitle
     //make a loop to create and append a new li item
