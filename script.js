@@ -3,7 +3,7 @@ var quizQuestions = [
     {
         questionTitle: 'Which HTML tag creates an unordered list?',
         questionChoices: ['<ul>', '<li>', '<ol>', '<s>'],
-        questionAnswer: 'ul'
+        questionAnswer: '<ul>'
     },
     {
         questionTitle: 'jQuery is an API extension of what?',
@@ -71,14 +71,14 @@ function renderQuestions(qIndex) {
         listChoice.textContent = listItem;
         quizDiv.appendChild(quizUl);
         quizUl.appendChild(listChoice);
-        listChoice.addEventListener('click', 'li', (compareClick))
+        listChoice.addEventListener('click', (compareClick))
     })
 }
 
 function compareClick(event) {
     var target = event.target;
     if(target.textContent == quizQuestions[qIndex].questionAnswer) {
-        divRW.textContent = "Correct";
+        divRW.textContent = "Correct"
     }
     else {
         timeLeft = timeLeft - 10;
