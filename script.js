@@ -32,5 +32,9 @@ var stopInterval = 0;
 //create a timer that will start on the button click
 //create a button linking to the start button
 timer.addEventListener('click', function() {
-    
+    if(stopInterval === 0) {
+        stopInterval = setInterval(function () {
+            timeLeft--;
+        }, 1000)
+    }
 })
