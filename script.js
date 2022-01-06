@@ -25,8 +25,12 @@ var quizQuestions = [
 //create a var that will link to html button
 var timer = document.querySelector('#startBtn')
 
+//create a variable for the countdown timer (in seconds)
+var timeLeft = 90;
+var stopInterval = 0;
+
 //create a timer that will start on the button click
 //create a button linking to the start button
 timer.addEventListener('click', function() {
-    console.log('works')
+    
 })
