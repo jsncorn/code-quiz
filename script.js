@@ -78,11 +78,11 @@ function renderQuestions(qIndex) {
 }
 
 function compareClick(event) {
-    var target = event.target;
+    var element = event.target;
 
     var mkDiv = document.createElement('div');
     mkDiv.setAttribute('id', 'mkDiv');
-    if (target.textContent == quizQuestions[qIndex].questionAnswer) {
+    if (element.textContent === quizQuestions[qIndex].questionAnswer) {
         mkDiv.textContent = "That is the correct answer!";
         
         console.log(qIndex);
@@ -96,10 +96,10 @@ function compareClick(event) {
     qIndex++;
 
     if(qIndex >= quizQuestions.length) {
-        createDiv.textContent = "End of the quiz. Your final score is " + timeLeft + '.'
+        mkDiv.textContent = "End of the quiz. Your final score is " + timeLeft + '.'
     }
     else {
         renderQuestions(qIndex);
     }
-    questionAnswer.appendChild(createDiv);
+    quizDiv.appendChild(mkDiv);
 }
