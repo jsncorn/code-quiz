@@ -70,6 +70,10 @@ function renderQuestions(qIndex) {
         listChoice.textContent = listItem;
         quizDiv.appendChild(quizUl);
         quizUl.appendChild(listChoice);
+        listChoice.addEventListener('click', 'li', (compareClick))
     })
+}
+
+function compareClick(event) {
 
 }
