@@ -78,13 +78,13 @@ function renderQuestions(qIndex) {
 function compareClick(event) {
     var target = event.target;
 
-    var mkRightWrongDiv = doucment.createElement('div');
-    mkRightWrongDiv.setAttribute('id','mkDiv');
+    var mkDiv = document.createElement('div');
+    mkDiv.setAttribute('id','mkDiv');
     if(target.textContent == quizQuestions[qIndex].questionAnswer) {
-        mkRightWrongDiv.textContent = "Correct"
+        mkDiv.textContent = "Correct"
     }
     else {
         timeLeft = timeLeft - 10;
-        mkRightWrongDiv.textContent = "Wrong";
+        mkDiv.textContent = "Wrong";
     }
 }
